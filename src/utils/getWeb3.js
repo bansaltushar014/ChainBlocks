@@ -14,7 +14,7 @@ let getWeb3 = new Promise(function(resolve, reject) {
       results = {
         web3: web3
       }
-
+      console.log(web3.version);
       console.log('Injected web3 detected.');
 
       resolve(results)
