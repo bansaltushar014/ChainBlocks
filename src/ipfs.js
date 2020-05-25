@@ -8,7 +8,7 @@ import web3Obj from './helper'
 // import './css/oswald.css'
 // import './css/open-sans.css'
 // import './css/pure-min.css'
-import './App.css'
+import './ipfs.css'
 
 class Ipfs extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class Ipfs extends Component {
 
   getUserInfo = async () => {
     const userInfo = await web3Obj.torus.getUserInfo()
-    alert(userInfo);
+
     console.log(userInfo);
   }
 
