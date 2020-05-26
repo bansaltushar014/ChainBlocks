@@ -16,6 +16,7 @@ function Example(props) {
         setShow(false);
         console.log("yes run");
         Payment.sendEth('0x3ad7074068117c29f43C8F175D5C6f10D4632B73',20);
+        // Payment.getStatus();
     } 
 
     const handleShow = () => setShow(true);

@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -10,8 +10,8 @@ import Card from 'react-bootstrap/Card';
 import './buttonFix.css';
 import Modal from './modal';
 import web3Obj from './helper'
-import $ from 'jquery';
 import api from './randomData.json';
+import axios from "axios";
 
 class Homepage extends React.Component {
     constructor() {
@@ -26,18 +26,10 @@ class Homepage extends React.Component {
 
     }
 
-
-
-
-
-    //   this need to be fixed, still not getting the data
     UserList() {
-        console.log("this is working");
-        $.get('http://localhost:5000/')
-            .then(({ results }) => {
-                // this.setState({ person: results })
-                console.log(results);
-            });
+        axios.get("http://localhost:4000/").then(res => {
+            console.log(res.data);
+        });
     }
 
     library() {
@@ -46,9 +38,9 @@ class Homepage extends React.Component {
     }
 
     showAlert() {
-       
 
-       
+
+
     }
 
     getUserInfo = async () => {
@@ -78,9 +70,9 @@ class Homepage extends React.Component {
                         <Col><Button onClick={this.getUserInfo} variant="info" className="button align-top">Info</Button>{' '}</Col>
                         <Col xs={6}><Form inline>
                             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                            <Button className="button"  variant="outline-success">Search</Button>
+                            <Button className="button" variant="outline-success">Search</Button>
                         </Form></Col>
-                        <Col><Button onClick={this.library} className="button"  variant="success">Library</Button>{''}</Col>
+                        <Col><Button onClick={this.library} className="button" variant="success">Library</Button>{''}</Col>
                         <Col><Button onClick={this.logout} className="button" variant="info">Logout</Button>{' '}</Col>
                     </Row>
                 </Container>
@@ -99,7 +91,7 @@ class Homepage extends React.Component {
                                                 Some quick example text to build on the card title and make up the bulk of
                                                 the card's content.
                                 </Card.Text>
-                                            <Button className="button"  variant="primary">Buy for {item.price} </Button>
+                                            <Button className="button" variant="primary">Buy for {item.price} </Button>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -108,8 +100,8 @@ class Homepage extends React.Component {
                     </Row>
                 </Container>
 
-                <Modal data= {api[0]} />
-                
+                <Modal data={api[0]} />
+
             </div>
         );
     }

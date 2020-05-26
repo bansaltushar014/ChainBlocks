@@ -26,7 +26,7 @@ class Ipfs extends Component {
 
   componentWillMount() {
     // Get network provider and web3 instance.
-    // See utils/getWeb3 for more info.
+    // See utils/getWeb3 for more info
 
     getWeb3
     .then(results => {
@@ -93,8 +93,9 @@ class Ipfs extends Component {
         return
       }
       this.simpleStorageInstance.set(result[0].hash, { from: this.state.account }).then((r) => {
-        return this.setState({ ipfsHash: result[0].hash })
-        console.log('ifpsHash', this.state.ipfsHash)
+        console.log('ifpsHash', result[0].hash);
+        return  this.setState({ ipfsHash: result[0].hash })
+        
       })
     })
   }
