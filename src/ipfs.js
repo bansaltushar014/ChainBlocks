@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import SimpleStorageContract from './contracts/SimpleStorage.json'
+import User from './contracts/User.json';
 import getWeb3 from './utils/getWeb3'
 import ipfsHelper from './ipfsHelper'
 import web3Obj from './helper'
@@ -22,6 +23,7 @@ class Ipfs extends Component {
     }
     this.captureFile = this.captureFile.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.UsergetContract = this.UsergetContract.bind(this);
   }
 
   componentWillMount() {
@@ -36,19 +38,49 @@ class Ipfs extends Component {
 
       // Instantiate contract once web3 provided.
       this.instantiateContract()
+      this.UserContract()
     })
     .catch(() => {
       console.log('Error finding web3.')
     })
   }
 
+  // this function is just to check the functionality 
   getUserInfo = async () => {
     const userInfo = await web3Obj.torus.getUserInfo()
 
     console.log(userInfo);
   }
 
+
+  // testing the deployed user smart contract
   instantiateContract() {
+    /*
+     * SMART CONTRACT EXAMPLE
+     *
+     * Normally these functions would be called in the context of a
+     * state management library, but for convenience I've placed them here.
+     */
+
+    const contract = require('truffle-contract')
+    const simpleStorage = contract(User)
+    simpleStorage.setProvider(this.state.web3.currentProvider)
+
+    // Get accounts.
+    this.state.web3.eth.getAccounts((error, accounts) => {
+      simpleStorage.deployed().then((instance) => {
+        this.simpleStorageInstance = instance
+        this.setState({ account: accounts[0] })
+        // Get the value from the contract to prove it worked.
+        return this.simpleStorageInstance.get.call(accounts[0])
+      }).then((ipfsHash) => {
+        // Update state with the result.
+        return this.setState({ ipfsHash })
+      })
+    })
+  }
+
+  UserContract() {
     /*
      * SMART CONTRACT EXAMPLE
      *
@@ -66,11 +98,21 @@ class Ipfs extends Component {
         this.simpleStorageInstance = instance
         this.setState({ account: accounts[0] })
         // Get the value from the contract to prove it worked.
-        return this.simpleStorageInstance.get.call(accounts[0])
-      }).then((ipfsHash) => {
-        // Update state with the result.
-        return this.setState({ ipfsHash })
+
+        this.simpleStorageInstance.set('this a test string', { from: this.state.account }).then((r) => {
+          console.log("inside 1");
+          this.UsergetContract();
+        })
       })
+    })
+  }
+
+  UsergetContract(){
+    console.log("Getting called");
+    this.simpleStorageInstance.get.call(this.state.account).then((ipfsHash) => {
+      // Update state with the result.
+      console.log("inside 2");
+     console.log(ipfsHash);
     })
   }
 
@@ -115,7 +157,7 @@ class Ipfs extends Component {
               <p>This image is stored on IPFS & The Ethereum Blockchain!</p>
               <img src={`https://ipfs.io/ipfs/${this.state.ipfsHash}`} alt=""/>
               <h2>Upload Image</h2>
-              <button onClick={this.getUserInfo}>Check</button>
+              <button onClick={this.UsergetContract}>Check</button>
               <form onSubmit={this.onSubmit} >
                 <input type='file' onChange={this.captureFile} />
                 <input type='submit' />
