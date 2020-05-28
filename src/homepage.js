@@ -58,10 +58,7 @@ class Homepage extends React.Component {
         })
     }
 
-
-
     render() {
-
 
         return (
             <div>
@@ -90,8 +87,9 @@ class Homepage extends React.Component {
                                             <Card.Text>
                                                 Some quick example text to build on the card title and make up the bulk of
                                                 the card's content.
-                                </Card.Text>
-                                            <Button className="button" variant="primary">Buy for {item.price} </Button>
+                                            </Card.Text>
+                                            {/*  <Button className="button" variant="primary">Buy for {item.price} </Button> */}
+                                            <Modal data={item} />
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -100,8 +98,7 @@ class Homepage extends React.Component {
                     </Row>
                 </Container>
 
-                <Modal data={api[0]} />
-
+               
             </div>
         );
     }
