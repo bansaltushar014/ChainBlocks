@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import './buttonFix.css';
 import Payment from './payment';
-import './buttonFix.css';
+
 
 function Example(props) {
     const [show, setShow] = useState(false);

@@ -1,4 +1,4 @@
-pragma solidity 0.5.16;
+pragma solidity 0.5.8;
 pragma experimental ABIEncoderV2;
 
 contract User {
@@ -18,5 +18,3 @@ contract User {
      return myusers[msg.sender].ipfs;
    }
 }
-
-

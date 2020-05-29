@@ -22,7 +22,8 @@ function Alpha(){
                    <Route component={NoMatch}/>
                    </Switch>
                </div>
-           </Router>
+          
+            </Router>
        </div>
    )
 }
