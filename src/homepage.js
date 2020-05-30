@@ -11,30 +11,46 @@ import './buttonFix.css';
 import Modal from './modal';
 import InfoModal from './infoModal';
 import web3Obj from './helper'
-import api from './randomData.json';
+import api from './randomData2.json';
+import home from './home';
+
 import axios from "axios";
 import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 import library from './library';
 import AddBookModal from './addBookModal';
 
 class Homepage extends React.Component {
-    constructor() {
-        super()
-        // this.secondaryFun = this.secondaryFun.bind(this);
-        console.log(api);
+    
+
+    constructor(props) {
+        super(props)
         this.getUserInfo = this.getUserInfo.bind(this);
+        this.getChainBookDataAzure = this.getChainBookDataAzure.bind(this);
+        console.log(api);
+        
+        this.state = {
+            chainBookDataAzure: [],
+          };
     }
 
     componentDidMount() {
-        this.UserList();
-        // this.getUserInfo();
+         this.getChainBookDataAzure();
     }
 
-    UserList() {
-        axios.get("http://localhost:4000/").then(res => {
-            console.log(res.data);
-        });
+
+    getChainBookDataAzure() {
+        let currentComponent = this;
+        axios.get('http://localhost:4000/api/getChainData')
+          .then(function (response) {
+            console.log(response.data);
+            // currentComponent.setData();
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
+
+   
 
     getUserInfo = async () => {
         this.data = {};
@@ -59,32 +75,7 @@ class Homepage extends React.Component {
         })
     }
 
-    home() {
-        return (
-            <Container >
-                <Row className="border border-dark">
-                    {
-                        api.map((item) => {
-                            return <Col>
-                                <Card style={{ width: '18rem' }}>
-                                    <Card.Img variant="top" src={item.image} />
-                                    <Card.Body>
-                                        <Card.Title>{item.By}</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the bulk of
-                                            the card's content.
-                                            </Card.Text>
-                                        {/*  <Button className="button" variant="primary">Buy for {item.price} </Button> */}
-                                        <Modal data={item} />
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        })
-                    }
-                </Row>
-            </Container>
-        )
-    }
+
 
 
 
@@ -94,6 +85,8 @@ class Homepage extends React.Component {
         this.getUserInfo();
         return (
             <div>
+                { this.state && this.state.chainBookDataAzure &&
+ 
                 <Router>
                     <Container >
 
@@ -109,7 +102,7 @@ class Homepage extends React.Component {
                             <AddBookModal />
                             </Col>
                             <Redirect to='/' />
-                            <Link to='/'><Col><Button onClick={this.home} className="button" variant="success">Home</Button>{''}</Col></Link>
+                            <Link to='/'><Col><Button onClick={home} className="button" variant="success">Home</Button>{''}</Col></Link>
                             <Link to='/library'><Col><Button onClick={this.library} className="button" variant="success">Library</Button>{''}</Col></Link>
                             <Col><Button onClick={this.logout} className="button" variant="info">Logout</Button>{' '}</Col>
                         </Row>
@@ -118,10 +111,11 @@ class Homepage extends React.Component {
                     {/* <button onClick={this.UserList}>fetch</button> */}
 
                     <Switch>
-                        <Route exact path='/' component={this.home} />
+                        <Route exact path='/' component={home} />
                         <Route path='/library' component={library} />
                     </Switch>
                 </Router>
+                }
             </div>
         );
     }
