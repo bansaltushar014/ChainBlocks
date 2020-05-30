@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import './buttonFix.css';
 import Payment from './payment';
 
+
 function Example(props) {
     const [show, setShow] = useState(false);
   
@@ -14,9 +15,14 @@ function Example(props) {
 
     const handleYes = () => {
         setShow(false);
-        console.log("yes run");
-        Payment.sendEth('0x3ad7074068117c29f43C8F175D5C6f10D4632B73',20);
-        // Payment.getStatus();
+        console.log("Inside HandleYes!");
+        const bookId = props.data.bookId;
+        const price = props.data.price;
+        // send the ether to owner 
+        Payment.getAuthorAddress(bookId, price)
+
+        // Payment.sendEth('0x3ad7074068117c29f43C8F175D5C6f10D4632B73',20);
+        // Payment.getStatus(); 
     } 
 
     const handleShow = () => setShow(true);
@@ -25,8 +31,8 @@ function Example(props) {
   
     return (
       <>
-        <Button variant="primary" onClick={handleShow}>
-          Launch demo modal
+        <Button className="button" variant="primary" onClick={handleShow}>
+        Buy for {props.data.price}
         </Button>
         {/* {props.data.name} */}
         <Modal show={show} onHide={handleClose}>
@@ -43,8 +49,7 @@ function Example(props) {
             </Button>
           </Modal.Footer>
         </Modal>
-       
-      </>
+        </>
     );
   }
   

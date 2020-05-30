@@ -24,6 +24,7 @@ class Ipfs extends Component {
     this.captureFile = this.captureFile.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.UsergetContract = this.UsergetContract.bind(this);
+    this.UserContract = this.UserContract.bind(this);
   }
 
   componentWillMount() {
@@ -37,8 +38,8 @@ class Ipfs extends Component {
         })
 
       // Instantiate contract once web3 provided.
-      this.instantiateContract()
-      this.UserContract()
+      // this.instantiateContract()
+       this.Initialize();
     })
     .catch(() => {
       console.log('Error finding web3.')
@@ -63,10 +64,11 @@ class Ipfs extends Component {
      */
 
     const contract = require('truffle-contract')
-    const simpleStorage = contract(User)
+    const simpleStorage = contract(SimpleStorageContract)
     simpleStorage.setProvider(this.state.web3.currentProvider)
 
     // Get accounts.
+    // console.log("web version "+ this.state.web3.version);
     this.state.web3.eth.getAccounts((error, accounts) => {
       simpleStorage.deployed().then((instance) => {
         this.simpleStorageInstance = instance
@@ -80,36 +82,25 @@ class Ipfs extends Component {
     })
   }
 
+  Initialize(){
+    const abi = User.abi;
+    const contractAddress = User.networks[3].address; 
+    this.userInstance = new this.state.web3.eth.Contract(abi,contractAddress);
+    this.UserContract();
+  }
+
   UserContract() {
-    /*
-     * SMART CONTRACT EXAMPLE
-     *
-     * Normally these functions would be called in the context of a
-     * state management library, but for convenience I've placed them here.
-     */
-
-    const contract = require('truffle-contract')
-    const simpleStorage = contract(SimpleStorageContract)
-    simpleStorage.setProvider(this.state.web3.currentProvider)
-
-    // Get accounts.
-    this.state.web3.eth.getAccounts((error, accounts) => {
-      simpleStorage.deployed().then((instance) => {
-        this.simpleStorageInstance = instance
-        this.setState({ account: accounts[0] })
-        // Get the value from the contract to prove it worked.
-
-        this.simpleStorageInstance.set('this a test string', { from: this.state.account }).then((r) => {
-          console.log("inside 1");
-          this.UsergetContract();
-        })
+    this.state.web3.eth.getAccounts().then((e)=>{
+      console.log("e0 is "+ e[0]);
+      this.userInstance.methods.set('testString3').send({from: e[0]}).then((r)=> {
+        console.log(r);      
       })
     })
   }
 
   UsergetContract(){
     console.log("Getting called");
-    this.simpleStorageInstance.get.call(this.state.account).then((ipfsHash) => {
+    this.userInstance.methods.get().call({from: '0xa02cd3afb5ba86996797aeda780b6bf46fccd43a'}).then((ipfsHash) => {
       // Update state with the result.
       console.log("inside 2");
      console.log(ipfsHash);

@@ -1,4 +1,4 @@
-pragma solidity 0.5.16;
+pragma solidity 0.5.8;
 pragma experimental ABIEncoderV2;
 
 contract Chainbooks {
@@ -21,10 +21,13 @@ contract Chainbooks {
   
     function getAuthor(uint id) public view returns (address author) {
      return bookId[id];
-     
    }
    
    function getIpfs(address author) public view returns (string[] memory) {
        return Owner[author].allIpfs;
+   }
+   
+   function getBookId() public view returns(uint){
+       return bookNumber;
    }
 }
