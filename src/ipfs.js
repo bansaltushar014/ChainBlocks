@@ -1,26 +1,26 @@
-import React, { Component } from 'react'
-import SimpleStorageContract from './contracts/SimpleStorage.json'
+import React, { Component } from 'react';
+import SimpleStorageContract from './contracts/SimpleStorage.json';
 import User from './contracts/User.json';
-import getWeb3 from './utils/getWeb3'
-import ipfsHelper from './ipfsHelper'
-import web3Obj from './helper'
+import getWeb3 from './utils/getWeb3';
+import ipfsHelper from './ipfsHelper';
+import web3Obj from './helper';
 
 
 // import './css/oswald.css'
 // import './css/open-sans.css'
 // import './css/pure-min.css'
-import './ipfs.css'
+import './ipfs.css';
 
 class Ipfs extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       ipfsHash: '',
       web3: null,
       buffer: null,
-      account: null
-    }
+      account: null,
+    };
     this.captureFile = this.captureFile.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.UsergetContract = this.UsergetContract.bind(this);
@@ -144,12 +144,11 @@ class Ipfs extends Component {
 
   render() {
     return (
-      
       <div className="App">
         <nav className="navbar pure-menu pure-menu-horizontal">
           <a href="#" className="pure-menu-heading pure-menu-link">IPFS File Upload DApp</a>
         </nav>
-        
+
         <main className="container">
           <div className="pure-g">
             <div className="pure-u-1-1">
@@ -158,9 +157,9 @@ class Ipfs extends Component {
               <img src={`https://ipfs.io/ipfs/${this.state.ipfsHash}`} alt=""/>
               <h2>Upload Image</h2>
               <button onClick={this.UsergetContract}>Check</button>
-              <form onSubmit={this.onSubmit} >
-                <input type='file' onChange={this.captureFile} />
-                <input type='submit' />
+              <form onSubmit={this.onSubmit}>
+                <input type="file" onChange={this.captureFile} />
+                <input type="submit" />
               </form>
             </div>
           </div>
@@ -170,4 +169,4 @@ class Ipfs extends Component {
   }
 }
 
-export default Ipfs
+export default Ipfs;
