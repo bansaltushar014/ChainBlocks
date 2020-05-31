@@ -86,7 +86,7 @@ class Homepage extends React.Component {
                 <Router>
                     <Container style={{padding: "0px 20px"}}>
 
-                        <Row className="border border-dark">
+                        <Row className="border border-dark" >
                             {/* <Col><Button onClick={this.getUserInfo} variant="info" className="button align-top">Info</Button>{' '}</Col> */}
                             <Col><InfoModal data={this.data} /></Col>
                             <Col>

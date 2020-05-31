@@ -3,6 +3,7 @@ import { StyleSheet } from '@react-pdf/renderer';
 import Homepage from './homepage';
 import { Document, Page, pdfjs } from 'react-pdf';
 import {  Route, Link, BrowserRouter } from "react-router-dom";
+import './css/appButton.css';
 
 class pdf extends Component {
   constructor(props) {
@@ -55,11 +56,11 @@ class pdf extends Component {
     }}>
         <nav>
           {pageNumber===1 ?
-          <button disabled={false}>Prev</button> :
-          <button onClick={this.goToPrevPage}>Prev</button>  }
+          <button className="button1 button2" disabled={false}>Prev</button> :
+          <button onClick={this.goToPrevPage} className="button1 button2">Prev</button>  }
           {pageNumber===numPages ?
-          <button disabled={false}>Next</button> :
-          <button onClick={this.goToNextPage}>Next</button>}
+          <button disabled={false} className="button1 button2">Next</button> :
+          <button onClick={this.goToNextPage} className="button1 button2">Next</button>}
        </nav>
        <p>
           Page

@@ -11,14 +11,14 @@ function home() {
 
    
     return (
-        <Container >
+        <Container style={{padding: "20px"}}>
             
-            <Row className="border border-dark">
+            <Row className="border border-dark" style={{padding: "20px"}}>
                 {
                     api.map((item) => {
                         return <Col>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={item.image} />
+                            <Card style={{ width: '18rem', margin: '10px' }}>
+                                <Card.Img variant="top" src={item.image} style={{ padding: "20px"}} />
                                 <Card.Body>
                                     <Card.Title>{item.name}</Card.Title>
                                      <label>By: <b>{item.By}</b></label> <br/>

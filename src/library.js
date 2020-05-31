@@ -42,17 +42,17 @@ const Library = () => {
 
     // userInitialization();
     return (
-        <Container >
+        <Container style={{padding: "20px"}}>
             
-            <Row className="border border-dark">
+            <Row className="border border-dark" style={{ padding: "20px"}}>
                 {
                     ipfs.map((item, index) => {
                         return <Col>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="http://placekitten.com/g/320/500" />
+                            <Card style={{ width: '18rem' }} margin='10px'>
+                                <Card.Img variant="top" src="http://placekitten.com/g/320/500" style={{ padding: "20px"}}/>
                                 <Card.Body>
                                     
-                    <Card.Title> Book Name {index} </Card.Title>
+                                  <Card.Title> Book Name {index} </Card.Title>
                                     <Card.Text>
                                         library quick example text to build on the card title and make up the bulk of
                                         the card's content. {item}
