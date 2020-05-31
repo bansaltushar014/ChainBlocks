@@ -2,6 +2,7 @@ import {App ,logout} from './App';
 import ipfs from './ipfs';
 import homepage from './homepage';
 import React from 'react';
+import pdf from './pdf';
 import {BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom';
  
 function Alpha(){
@@ -19,6 +20,7 @@ function Alpha(){
                    <Route exact path='/'  component={App} />
                    <Route  path='/ipfs'  component={ipfs} />
                    <Route  path='/homepage'  component={homepage} />
+                   <Route path='/pdf' component={pdf} />
                    <Route component={NoMatch}/>
                    </Switch>
                </div>

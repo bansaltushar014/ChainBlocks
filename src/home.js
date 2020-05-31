@@ -13,7 +13,7 @@ function home() {
     return (
         <Container >
             
-            <Row className="border border-dark">
+            <Row className="border border-dark" style={{padding: "20px"}}>
                 {
                     api.map((item) => {
                         return <Col>
