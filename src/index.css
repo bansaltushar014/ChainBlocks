@@ -43,3 +43,8 @@ button {
   background: none;
   border-radius: 5px;
 }
+
+p {
+  text-align:center; 
+  display: inline-block;
+ }
