@@ -35,7 +35,7 @@ class pdf extends Component {
 
   componentDidMount(){
     this.loadBlockchain();
-    window.history.replaceState({}, document.title, "/" + "pdf");
+  //  window.history.replaceState({}, document.title, "/" + "pdf");
   }
 
   render() {
