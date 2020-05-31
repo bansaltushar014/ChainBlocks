@@ -40,7 +40,7 @@ const Library = () => {
 
     function Read(item){
         console.log("Read book executing!" + item);
-        var url = "http://localhost:3000/pdf?hash="+item;
+        var url = window.location.origin+"/pdf?hash="+item;
         window.open(url, "_blank")
     //    window.location.href = url;
     }
