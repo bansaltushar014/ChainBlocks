@@ -75,12 +75,6 @@ class Homepage extends React.Component {
         })
     }
 
-
-
-
-
-
-
     render() {
         this.getUserInfo();
         return (
@@ -88,7 +82,7 @@ class Homepage extends React.Component {
                 { this.state && this.state.chainBookDataAzure &&
  
                 <Router>
-                    <Container >
+                    <Container style={{padding: "0px 20px"}}>
 
                         <Row className="border border-dark">
                             {/* <Col><Button onClick={this.getUserInfo} variant="info" className="button align-top">Info</Button>{' '}</Col> */}

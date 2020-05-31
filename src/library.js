@@ -10,6 +10,7 @@ import Card from 'react-bootstrap/Card';
 import './buttonFix.css';
 import User from './contracts/User.json';
 import web3Obj from './helper'
+import ReadBookModal from './readBookModal';
 
 
 
@@ -37,6 +38,8 @@ const Library = () => {
         })
 }
 
+
+
     // userInitialization();
     return (
         <Container >
@@ -52,10 +55,10 @@ const Library = () => {
                     <Card.Title>klkl </Card.Title>
                                     <Card.Text>
                                         library quick example text to build on the card title and make up the bulk of
-                                        the card's content.
+                                        the card's content. {item}
                                             </Card.Text>
                                     {/*  <Button className="button" variant="primary">Buy for {item.price} </Button> */}
-                                    <button>Read</button>
+                                    <ReadBookModal data={item} /> 
                                 </Card.Body>
                             </Card>
                         </Col>

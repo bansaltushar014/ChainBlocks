@@ -179,7 +179,7 @@ function Example() {
     return (
         <>
             <Button className="button" variant="primary" onClick={handleShow}>
-                Buy for
+                Add Book
             </Button>
             {/* {props.data.name} */}
             <Modal show={show} onHide={handleClose}>
