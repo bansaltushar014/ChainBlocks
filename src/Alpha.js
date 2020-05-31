@@ -1,8 +1,8 @@
 import {App ,logout} from './App';
 import ipfs from './ipfs';
+import pdf from './pdf';
 import homepage from './homepage';
 import React from 'react';
-import pdf from './pdf';
 import {BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom';
  
 function Alpha(){
