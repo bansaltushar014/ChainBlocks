@@ -42,22 +42,7 @@ const chainData = mongoose.model('chainBook1', chainBookSchema);
 //   db.close();
 // });
 
-const run = () => {
 
-
-  let lyrics = 'But stilssssl I\'m having memories of high speeds when the cops crashed\n' +
-    'As I laugh, pushin the gas while my Glocks blast\n' +
-    'We was young and we was dumb but we had heart';
-
-  // write to a new file named 2pac.txt
-  fs.writeFile('2pac.txt', lyrics, (err) => {
-    // throws an error, you could also catch it here
-    if (err) throw err;
-
-    // success case, the file was saved
-    console.log('Lyric saved!');
-  });
-}
 
 exports.data = function (req, res, next) {
 
@@ -87,6 +72,6 @@ exports.getChainData = function (req, res, next) {
 
 exports.chainData = chainData;
 
-exports.writefile = run;
+
 
 

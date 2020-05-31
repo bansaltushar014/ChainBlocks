@@ -287,7 +287,7 @@ class App extends React.Component {
       <div className="App">
         {!account && (
           <div>
-            <h3>ChainBlocks</h3>
+            <h3>ChainBooks</h3>
           <form onSubmit={this.enableTorus}>
             {/* <p>Build Environment</p>
             <select name="buildEnv" value={buildEnv} onChange={e => this.setState({ buildEnv: e.target.value })}>

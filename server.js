@@ -69,7 +69,7 @@ app.post('/api/trial', (req,res) => {
   res.send(req.body);
 })
 
-app.get('/writefile', fetch.writefile);
+
 // app.post('/api/post', (req, res) => {
 //   console.log(req.body.post);
 //   db.createCollection("chainBook", function (err, res) {

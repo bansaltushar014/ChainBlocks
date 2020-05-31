@@ -27,7 +27,7 @@ class pdf extends Component {
   goToNextPage = () => this.setState((state) => ({ pageNumber: state.pageNumber + 1 }));
  
   loadBlockchain(){
-   const urlhash="https://ipfs.io/ipfs/"+(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + 
+    const urlhash="https://ipfs.io/ipfs/"+(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + 
     encodeURIComponent("hash").replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"))
     console.log('ursl : '+urlhash);
     this.setState({urlhash})
