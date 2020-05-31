@@ -106,6 +106,7 @@ class Payment extends Component {
         await web3Obj.web3.eth.getAccounts().then(async (accounts) => {
         await this.userInstance.methods.set(ipfs).send({ from: accounts[0] })
             .then((result) => {
+                alert("Book is saved in Library!");
                 console.log("IPFS has been saved!");
                 console.log(result);
             })

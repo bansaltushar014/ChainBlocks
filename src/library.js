@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Modal from './modal';
 import Card from 'react-bootstrap/Card';
-import './buttonFix.css';
+import './css/buttonFix.css';
 import User from './contracts/User.json';
 import web3Obj from './helper'
 import ReadBookModal from './readBookModal';
@@ -46,13 +46,13 @@ const Library = () => {
             
             <Row className="border border-dark">
                 {
-                    ipfs.map((item) => {
+                    ipfs.map((item, index) => {
                         return <Col>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src="http://placekitten.com/g/320/500" />
                                 <Card.Body>
                                     
-                    <Card.Title>klkl </Card.Title>
+                    <Card.Title> Book Name {index} </Card.Title>
                                     <Card.Text>
                                         library quick example text to build on the card title and make up the bulk of
                                         the card's content. {item}

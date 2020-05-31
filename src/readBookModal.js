@@ -1,7 +1,7 @@
 import Modal from 'react-bootstrap/Modal';
 import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
-import './buttonFix.css';
+import './css/buttonFix.css';
 
 
 
@@ -15,6 +15,10 @@ function ReadBook(props) {
 
     const handleYes = () => {
         setShow(false);
+        console.log(props.data)
+       var url = "http://localhost:3000/pdf?hash="+props.data;
+
+       window.location.href = url;
     } 
 
     const handleShow = () => setShow(true);
@@ -37,7 +41,7 @@ function ReadBook(props) {
               Cancel
             </Button>
             <Button className="button"  variant="primary" onClick={handleYes}>
-            <a target="_blank" href="http://localhost:3000/pdf?hash=QmaTyn7RxTjo2Z7Kf6CCnHE4MZKndfvZ8vu1qCG3t7roNK">Open</a>
+              Yes
             </Button>
           </Modal.Footer>
         </Modal>

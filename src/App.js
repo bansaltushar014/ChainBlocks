@@ -2,6 +2,7 @@ import React from 'react'
 import web3Obj from './helper'
 import homepage from './homepage';
 import {BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom';
+import './css/appButton.css';
 
 const tokenAbi = require('human-standard-token-abi')
 
@@ -285,6 +286,8 @@ class App extends React.Component {
     return (
       <div className="App">
         {!account && (
+          <div>
+            <h3>ChainBlocks</h3>
           <form onSubmit={this.enableTorus}>
             {/* <p>Build Environment</p>
             <select name="buildEnv" value={buildEnv} onChange={e => this.setState({ buildEnv: e.target.value })}>
@@ -293,8 +296,9 @@ class App extends React.Component {
               <option value="testing">Testing</option>
               <option value="development">Development</option>
             </select> */}
-            <button>Login</button>
+            <button className="button1 button2">Login</button>
           </form>
+          </div>
         )}
         {account && (
           <div>
@@ -312,4 +316,5 @@ class App extends React.Component {
   }
 }
 
-export default App
+const logout1 = new App();
+export {logout1,App};

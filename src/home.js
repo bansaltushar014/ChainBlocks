@@ -20,7 +20,8 @@ function home() {
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src={item.image} />
                                 <Card.Body>
-                                    <Card.Title>{item.By}</Card.Title>
+                                    <Card.Title>{item.name}</Card.Title>
+                                     <label>By: <b>{item.By}</b></label> <br/>
                                     <Card.Text>
                                         Some quick example text to build on the card title and make up the bulk of
                                         the card's content.

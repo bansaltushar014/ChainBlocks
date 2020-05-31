@@ -7,13 +7,13 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Card from 'react-bootstrap/Card';
-import './buttonFix.css';
+import './css/buttonFix.css';
 import Modal from './modal';
 import InfoModal from './infoModal';
 import web3Obj from './helper'
 import api from './randomData2.json';
 import home from './home';
-
+import {logout1} from './App';
 import axios from "axios";
 import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 import library from './library';
@@ -69,10 +69,12 @@ class Homepage extends React.Component {
     }
 
     logout = () => {
-        web3Obj.torus.cleanUp().then(() => {
-            this.setState({ account: '', balance: 0 })
-            sessionStorage.setItem('pageUsingTorus', false)
-        })
+        // web3Obj.torus.cleanUp().then(() => {
+        //     this.setState({ account: '', balance: 0 })
+        //     sessionStorage.setItem('pageUsingTorus', false)
+        // })
+        logout1.logout();
+        window.location.reload('http://localhost:3000/'); 
     }
 
     render() {

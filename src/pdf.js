@@ -7,7 +7,7 @@ import {  Route, Link, BrowserRouter } from "react-router-dom";
 class pdf extends Component {
   constructor(props) {
     super(props);
-    this.state = { numPages: null, pageNumber: 1, history: null};
+    this.state = { numPages: null, pageNumber: 1, urlhash:null};
     pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
    // this.handleClick = this.handleClick.bind(this);
   }
@@ -26,8 +26,10 @@ class pdf extends Component {
   goToNextPage = () => this.setState((state) => ({ pageNumber: state.pageNumber + 1 }));
  
   loadBlockchain(){
-    console.log(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + 
+   const urlhash="https://ipfs.io/ipfs/"+(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + 
     encodeURIComponent("hash").replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"))
+    console.log('ursl : '+urlhash);
+    this.setState({urlhash})
   }
 
   componentDidMount(){
@@ -36,7 +38,7 @@ class pdf extends Component {
   }
 
   render() {
-    const { pageNumber, numPages } = this.state;
+    const { pageNumber, numPages, urlhash } = this.state;
     const styles = StyleSheet.create({
       page: {       
         width:"100h"
@@ -72,7 +74,7 @@ class pdf extends Component {
     }}>
         
          <Document
-            file="https://ipfs.io/ipfs/QmaTyn7RxTjo2Z7Kf6CCnHE4MZKndfvZ8vu1qCG3t7roNK"
+            file={urlhash}
             onLoadSuccess={this.onDocumentLoadSuccess}
           >
             <Page pageNumber={pageNumber} style={600}/>
