@@ -31,6 +31,7 @@ class Payment extends Component {
             })
     }
 
+    // I think, Not getting used
     Initialize() {
         console.log("Inside Initialize");
         const userAbi = User.abi;
@@ -43,18 +44,21 @@ class Payment extends Component {
 
     }
 
+    // user smart contract initialized here
     userInitialization() {
         const userAbi = User.abi;
         const userContractAddress = User.networks[3].address;
         this.userInstance = new web3Obj.web3.eth.Contract(userAbi, userContractAddress);
     }
 
+    // chainBook smart contract initialized here
     chainBooksInitialization() {
         const chainBooksAbi = Chainbooks.abi;
         const chainBooksContractAddress = Chainbooks.networks[3].address;
         this.chainBookInstance = new web3Obj.web3.eth.Contract(chainBooksAbi, chainBooksContractAddress);
     }
 
+    // On click buy book, bookid and price is passed to get Author's address 
     getAuthorAddress = async (bookid, price) => {
         this.chainBooksInitialization();
         console.log("Inside getAuthorAddress with id " + bookid);
@@ -68,6 +72,7 @@ class Payment extends Component {
         })
     }
 
+    // Money is sent to Author's address
     makePayment = async (price, address) => {
         var eth = (price * 0.000061).toFixed(4);
         console.log("Inside makePayment with Eth " + eth);
@@ -80,6 +85,7 @@ class Payment extends Component {
         })
     }
 
+    // After the success of money transaction, Ipfs is called from the chainbook smart contract
     shareIpfs = async (address) => {
         console.log("Inside shareIpfs!");
         await web3Obj.web3.eth.getAccounts().then(async (accounts) => {
@@ -93,6 +99,7 @@ class Payment extends Component {
         })
     }
 
+    // Ipfs is stored in the User's smart contract
     saveIpfsToUser = async (ipfs) => {
         this.userInitialization();
         console.log("Inside saveIpfsToUser!");
@@ -106,19 +113,20 @@ class Payment extends Component {
     }
 
 
-
+    // I think, Not getting used
     getUserInfo = async () => {
         const userInfo = await web3Obj.torus.getUserInfo()
         console.log(userInfo);
     }
 
+    // I think, Not getting used
     sendEth = async (toaccount, value) => {
 
         var receipt = await web3Obj.web3.eth.sendTransaction({ from: '0xa02cD3AFB5BA86996797AeDa780B6bF46fcCD43A', to: toaccount, value: web3Obj.web3.utils.toWei('0.01') })
         alert(JSON.stringify(receipt));
     }
 
-
+    // I think, Not getting used
     getStatus = async () => {
         console.log("insisde getStatus");
         var receipt = await web3Obj.web3.eth.getTransactionReceipt('0x24b0829cf1bc2724d85af24fe3d4da9be5b97021e340385de9aa80a046659a08');

@@ -12,10 +12,9 @@ function Alpha(){
                <div>
                    
                    <ul>
-                      <li><Link to='/'>App</Link></li>
+                      {/* <li><Link to='/'>App</Link></li>
                        <li><Link to='/ipfs'>ipfs</Link></li>
-                       <li><Link to='/homepage'>homepage</Link></li>
-                       <li><Link to='/pdf'>View pdf</Link></li>
+                       <li><Link to='/homepage'>homepage</Link></li> */}
                    </ul>
                    <Switch>
                    <Route exact path='/'  component={App} />

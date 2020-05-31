@@ -1,5 +1,7 @@
 import React from 'react'
 import web3Obj from './helper'
+import homepage from './homepage';
+import {BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom';
 
 const tokenAbi = require('human-standard-token-abi')
 
@@ -10,7 +12,7 @@ class App extends React.Component {
     selectedVerifier: 'google',
     placeholder: 'Enter google email',
     verifierId: null,
-    buildEnv: 'development'
+    buildEnv: 'testing'
   }
 
   componentDidMount() {
@@ -284,54 +286,27 @@ class App extends React.Component {
       <div className="App">
         {!account && (
           <form onSubmit={this.enableTorus}>
-            <p>Build Environment</p>
+            {/* <p>Build Environment</p>
             <select name="buildEnv" value={buildEnv} onChange={e => this.setState({ buildEnv: e.target.value })}>
               <option value="production">Production</option>
               <option value="staging">Staging</option>
               <option value="testing">Testing</option>
               <option value="development">Development</option>
-            </select>
+            </select> */}
             <button>Login</button>
           </form>
         )}
         {account && (
           <div>
-            <div>Account: {account}</div>
-            <div>Balance: {balance}</div>
-            <button onClick={this.getUserInfo}>Get User Info</button>
-            <button onClick={this.createPaymentTx}>Create Payment Tx</button>
-            <button onClick={this.sendEth}>Send Eth</button>
-            <button onClick={this.logout}>Logout</button>
-            <br />
-            <button onClick={this.signMessage}>sign_eth</button>
-            <button onClick={this.signTypedData_v1}>sign typed data v1</button>
-            <button onClick={this.signTypedData_v3}>sign typed data v3</button>
-            <button onClick={this.signTypedData_v4}>sign typed data v4</button>
-            <button onClick={this.changeProvider}>Change Provider</button>
-            <button onClick={this.sendDai}>Send DAI</button>
-            <div style={{ marginTop: '20px' }}>
-              <select name="verifier" onChange={this.onSelectedVerifierChanged} value={selectedVerifier}>
-                <option defaultValue value="google">
-                  Google
-                </option>
-                <option value="reddit">Reddit</option>
-                <option value="discord">Discord</option>
-              </select>
-              <input
-                type="email"
-                style={{ marginLeft: '20px' }}
-                onChange={e => this.setState({ verifierId: e.target.value })}
-                placeholder={placeholder}
-              />
+            <Router>
+            <Redirect to='/homepage' />
+            <Switch>
+                        <Route exact path='/homepage' component={homepage} />
+                        
+            </Switch>
+            </Router>
             </div>
-            <button disabled={!verifierId} style={{ marginTop: '20px' }} onClick={this.getPublicAddress}>
-              Get Public Address
-            </button>
-          </div>
         )}
-        <div id="console">
-          <p></p>
-        </div>
       </div>
     )
   }

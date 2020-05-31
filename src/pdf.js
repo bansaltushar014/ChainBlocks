@@ -58,9 +58,6 @@ class pdf extends Component {
           {pageNumber===numPages ?
           <button disabled={false}>Next</button> :
           <button onClick={this.goToNextPage}>Next</button>}
-          <button type="button" >
-          <a target="_blank" href="http://localhost:3000/pdf?hash=QmaTyn7RxTjo2Z7Kf6CCnHE4MZKndfvZ8vu1qCG3t7roNK">Policies</a>
-    </button>
        </nav>
        <p>
           Page
