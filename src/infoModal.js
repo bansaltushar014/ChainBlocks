@@ -1,7 +1,7 @@
 import Modal from 'react-bootstrap/Modal';
 import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
-import './buttonFix.css';
+import './css/buttonFix.css';
 
 
 function Example(props) {

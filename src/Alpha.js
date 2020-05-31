@@ -1,4 +1,4 @@
-import App from './App';
+import {App ,logout} from './App';
 import ipfs from './ipfs';
 import homepage from './homepage';
 import React from 'react';
