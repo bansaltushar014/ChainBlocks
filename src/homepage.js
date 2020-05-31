@@ -96,8 +96,8 @@ class Homepage extends React.Component {
                             <AddBookModal />
                             </Col>
                             <Redirect to='/' />
-                            <Link to='/'><Col><Button onClick={home} className="button" variant="success">Home</Button>{''}</Col></Link>
-                            <Link to='/library'><Col><Button onClick={this.library} className="button" variant="success">Library</Button>{''}</Col></Link>
+                            <Link to='/'><Col><Button onClick={home} className="button">Home</Button>{''}</Col></Link>
+                            <Link to='/library'><Col><Button onClick={this.library} className="button">Library</Button>{''}</Col></Link>
                             <Col><Button onClick={this.logout} className="button" variant="info">Logout</Button>{' '}</Col>
                         </Row>
 
