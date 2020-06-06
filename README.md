@@ -1,3 +1,4 @@
+## ChainBooks
 This project solves the problem between Readers and Writers. Writers can sell their book on this platform without any middleman involvement. Books and Payment are taken care with the help of Blockchain where Books are stored in Ipfs and Payment is occuring with the help of Torus clould wallet. 
 
 ## Technology
@@ -10,7 +11,7 @@ This project solves the problem between Readers and Writers. Writers can sell th
 - Torus Wallet <br>
 - Solidity <br>
 
-### How to Start:
+## How to Start
 
 - `npm install`
 - `npm start`
