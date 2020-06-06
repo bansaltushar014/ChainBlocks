@@ -2,7 +2,6 @@ import Modal from 'react-bootstrap/Modal';
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import './css/buttonFix.css';
-import Payment from './payment';
 import ipfsHelper from './ipfsHelper'
 import Chainbooks from './contracts/Chainbooks.json';
 import web3Obj from './helper'
@@ -33,10 +32,6 @@ function Example() {
         setSecondShow(false);
     }
 
-    const handleSecondYes = () => {
-        setSecondShow(false);
-    }
-
     const handleSecondShow = () => {
         setSecondShow(true);
     }
@@ -52,12 +47,9 @@ function Example() {
         setBookName(book);
     }
           
-   
-
     const [buffer, setBuffer] = useState([]);
     const [chainBookInstance, setChainBookInstance] = useState();
-    const [generatedHash, setGeneratedHash] = useState(null);
-
+    const [setGeneratedHash] = useState(null);
    
     const initialize = () => {
         const chainBooksAbi = Chainbooks.abi;

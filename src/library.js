@@ -1,23 +1,15 @@
 
 import React, { useState, useEffect } from "react";
-import api from './randomData.json';
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import Modal from './modal';
 import Card from 'react-bootstrap/Card';
 import './css/buttonFix.css';
 import User from './contracts/User.json';
 import web3Obj from './helper'
-import ReadBookModal from './readBookModal';
-
-
-
 
 const Library = () => {
   const [ipfs, setipfs] = useState([]);
-//   const [planets, setPlanets] = useState({});
 
   useEffect(() => {
     userInitialization();

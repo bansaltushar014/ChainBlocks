@@ -10,8 +10,7 @@ function Example(props) {
     const handleClose = () => {
         setShow(false);
     }
-
-    
+ 
     const handleYes = () => {
         setShow(false);
     } 
@@ -19,8 +18,6 @@ function Example(props) {
     const handleShow = () => {
         setShow(true)
     };
-
-
   
     return (
       <>

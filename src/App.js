@@ -1,7 +1,7 @@
 import React from 'react'
 import web3Obj from './helper'
 import homepage from './homepage';
-import {BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import './css/appButton.css';
 
 const tokenAbi = require('human-standard-token-abi')
@@ -282,7 +282,7 @@ class App extends React.Component {
   }
 
   render() {
-    let { account, buildEnv, selectedVerifier, verifierId, placeholder, balance } = this.state
+    let { account} = this.state
     return (
       <div className="App">
         {!account && (

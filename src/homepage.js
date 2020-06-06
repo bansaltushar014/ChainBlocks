@@ -1,14 +1,10 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
-import Card from 'react-bootstrap/Card';
 import './css/buttonFix.css';
-import Modal from './modal';
 import InfoModal from './infoModal';
 import web3Obj from './helper'
 import api from './randomData2.json';
@@ -21,7 +17,6 @@ import AddBookModal from './addBookModal';
 
 class Homepage extends React.Component {
     
-
     constructor(props) {
         super(props)
         this.getUserInfo = this.getUserInfo.bind(this);
@@ -39,11 +34,11 @@ class Homepage extends React.Component {
 
 
     getChainBookDataAzure() {
-        let currentComponent = this;
+        
         axios.get('http://localhost:4000/api/getChainData')
           .then(function (response) {
             console.log(response.data);
-            // currentComponent.setData();
+        
           })
           .catch(function (error) {
             console.log(error);
@@ -69,10 +64,6 @@ class Homepage extends React.Component {
     }
 
     logout = () => {
-        // web3Obj.torus.cleanUp().then(() => {
-        //     this.setState({ account: '', balance: 0 })
-        //     sessionStorage.setItem('pageUsingTorus', false)
-        // })
         logout1.logout();
         window.location.reload('http://localhost:3000/'); 
     }
@@ -87,14 +78,8 @@ class Homepage extends React.Component {
                     <Container style={{padding: "0px 20px"}}>
 
                         <Row className="border border-dark">
-                            {/* <Col><Button onClick={this.getUserInfo} variant="info" className="button align-top">Info</Button>{' '}</Col> */}
                             <Col><InfoModal data={this.data} /></Col>
                             <Col>
-                            {/* <Form inline>
-                                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                                <Button className="button" variant="outline-success">Search</Button>
-                            </Form> */}
-                            {/* <Button onClick={''} className="button" variant="info">Add Book</Button> */}
                             <AddBookModal />
                             </Col>
                             <Redirect to='/' />
@@ -104,8 +89,6 @@ class Homepage extends React.Component {
                         </Row>
 
                     </Container>
-                    {/* <button onClick={this.UserList}>fetch</button> */}
-
                     <Switch>
                         <Route exact path='/' component={home} />
                         <Route path='/library' component={library} />

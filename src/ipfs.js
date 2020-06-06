@@ -5,10 +5,6 @@ import getWeb3 from './utils/getWeb3'
 import ipfsHelper from './ipfsHelper'
 import web3Obj from './helper'
 
-
-// import './css/oswald.css'
-// import './css/open-sans.css'
-// import './css/pure-min.css'
 import './css/ipfs.css'
 
 class Ipfs extends Component {
@@ -49,7 +45,6 @@ class Ipfs extends Component {
   // this function is just to check the functionality 
   getUserInfo = async () => {
     const userInfo = await web3Obj.torus.getUserInfo()
-
     console.log(userInfo);
   }
 

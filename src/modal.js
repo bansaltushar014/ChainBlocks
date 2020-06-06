@@ -23,9 +23,7 @@ function Example(props) {
     Payment.getAuthorAddress(bookId, price)
     handleSecondShow();
     handleSecondClose();
-    // Payment.sendEth('0x3ad7074068117c29f43C8F175D5C6f10D4632B73',20);
-    // Payment.getStatus(); 
-  }
+}
 
   const handleShow = () => setShow(true);
 
@@ -34,10 +32,6 @@ function Example(props) {
       setSecondShow(false);
     }, 20000);
     
-  }
-
-  const handleSecondYes = () => {
-    setSecondShow(false);
   }
 
   const handleSecondShow = () => {

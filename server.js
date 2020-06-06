@@ -7,8 +7,6 @@ const app = express();
 const Schema = mongoose.Schema;
 const port = process.env.PORT || 4000;
 
-
-
 mongoose.connect('mongodb://749c317d-0ee0-4-231-b9ee:rfWUGy5rJc3VwS3V4ix2QXPr4lOPH3CVu0umSeUUVhkx6lMl3ift7386Ksitg8UacVY66KMubB1KQQRcUphxaA%3D%3D@749c317d-0ee0-4-231-b9ee.documents.azure.com:10255/?ssl=true',
  { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -19,15 +17,6 @@ db.once("open", function(callback) {
    console.log("Mongo Connection Succeeded."); 
 });
 
-
-// it was used once to create collection
-// db.createCollection("chainBook", function(err, res) {
-//   if (err) throw err;
-//   console.log("Collection created!");
-//   db.close();
-// });
-
-// This is used to give cross origin requests
 app.use(cors({ origin: "*" }));
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", '*');
@@ -38,8 +27,6 @@ app.use(function (req, res, next) {
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get('/', fetch.data);
 
 app.post('/api/postChainData', (req,res,next)=> {
 
@@ -63,27 +50,5 @@ app.post('/api/postChainData', (req,res,next)=> {
 });  
 
 app.get('/api/getChainData', fetch.getChainData);
-
-
-app.post('/api/trial', (req,res) => {
-  res.send(req.body);
-})
-
-
-// app.post('/api/post', (req, res) => {
-//   console.log(req.body.post);
-//   db.createCollection("chainBook", function (err, res) {
-//     if (err) throw err;
-//     console.log("Collection created!");
-//     db.close();
-//   });
-
-//   db.collection("chainBook").insertOne(req.body.post, function (err, res) {
-//     if (err) throw err;
-//     console.log("1 document inserted");
-//     db.close();
-//   });
-
-// });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
