@@ -6,19 +6,19 @@ This project solves the problem between Readers and Writers. Writers can sell th
 
 ## `Technology`
 
-    Ethereum <br>
-    Truffle Framework <br>
-    React <br>
-    Ipfs <br>
-    Azure Cosmo DB <br>
-    Azure Devops <br>
-    Torus Wallet <br>
-    Solidity <br>
+    Ethereum 
+    Truffle Framework 
+    React 
+    Ipfs 
+    Azure Cosmo DB 
+    Azure Devops 
+    Torus Wallet 
+    Solidity 
 
 
 ## `How to Start`
 
-Clone https://github.com/bansaltushar014/ChainBlocks.git <br>
+git clone https://github.com/bansaltushar014/ChainBlocks.git <br>
 npm install <br>
 truffle compile <br>
 truffle migrate <br>
