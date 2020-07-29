@@ -31,7 +31,7 @@ function ReadBook(props) {
           <Modal.Header closeButton>
             <Modal.Title>Read Book</Modal.Title>
           </Modal.Header>
-    <Modal.Body>Yes, I want to buy this book written by  for {props.data}  &#x20B9;</Modal.Body>
+          <Modal.Body>Yes, I want to buy this book written by  for {props.data}  &#x20B9;</Modal.Body>
           <Modal.Footer>
             <Button className="button" variant="secondary" onClick={handleClose}>
               Cancel

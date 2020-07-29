@@ -10,7 +10,8 @@ function Example(props) {
     const handleClose = () => {
         setShow(false);
     }
- 
+
+    
     const handleYes = () => {
         setShow(false);
     } 
@@ -18,6 +19,8 @@ function Example(props) {
     const handleShow = () => {
         setShow(true)
     };
+
+
   
     return (
       <>
@@ -37,9 +40,6 @@ function Example(props) {
 
             </Modal.Body>
           <Modal.Footer>
-            {/* <Button className="button" variant="secondary" onClick={handleClose}>
-              Cancel
-            </Button> */}
             <Button className="button"  variant="primary" onClick={handleYes}>
               OK!
             </Button>

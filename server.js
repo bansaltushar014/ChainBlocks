@@ -6,8 +6,11 @@ var cors = require('cors');
 const app = express();
 const Schema = mongoose.Schema;
 const port = process.env.PORT || 4000;
+const path = require('path');
+require('dotenv').config()
 
-mongoose.connect('mongodb://749c317d-0ee0-4-231-b9ee:rfWUGy5rJc3VwS3V4ix2QXPr4lOPH3CVu0umSeUUVhkx6lMl3ift7386Ksitg8UacVY66KMubB1KQQRcUphxaA%3D%3D@749c317d-0ee0-4-231-b9ee.documents.azure.com:10255/?ssl=true',
+
+mongoose.connect(process.env.url,
  { useNewUrlParser: true, useUnifiedTopology: true });
 
 var db = mongoose.connection;
@@ -27,6 +30,9 @@ app.use(function (req, res, next) {
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
+app.use('/static', express.static(path.join(__dirname, './build/contracts')));
 
 app.post('/api/postChainData', (req,res,next)=> {
 
@@ -50,5 +56,6 @@ app.post('/api/postChainData', (req,res,next)=> {
 });  
 
 app.get('/api/getChainData', fetch.getChainData);
+
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

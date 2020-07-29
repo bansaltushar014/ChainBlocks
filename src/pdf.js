@@ -8,13 +8,7 @@ class pdf extends Component {
     super(props);
     this.state = { numPages: null, pageNumber: 1, urlhash: null };
     pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-    // this.handleClick = this.handleClick.bind(this);
   }
-
-  // handleClick() {
-  //  // const history= useHistory();
-  //   this.myHistory.push("/homepage");
-  // }
 
   onDocumentLoadSuccess = ({ numPages }) => {
     this.setState({ numPages });
@@ -61,12 +55,7 @@ class pdf extends Component {
               <button disabled={false} className="button1 button2">Next</button> :
               <button onClick={this.goToNextPage} className="button1 button2">Next</button>}
           </nav>
-          <p>
-            Page
-          {pageNumber}
-            of
-          {numPages}
-          </p>
+          <p> Page {pageNumber} of {numPages} </p>
         </div>
 
         <div style={{

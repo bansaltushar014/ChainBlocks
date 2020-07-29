@@ -1,20 +1,54 @@
 import React from 'react';
-
+import axios from "axios";
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
-import api from './randomData2.json';
 import Card from 'react-bootstrap/Card';
-import Modal from './modal';
+import BuyBookModal from './buyBookModal';
 
-function home() {
 
-   
+class Home extends React.Component {
+
+
+
+    constructor(props) {
+        super(props)
+        this.getDatafromApi = this.getDatafromApi.bind(this);
+        this.state = {
+            api: [],
+          };
+    }
+
+
+  componentDidMount = () => {
+    this.getDatafromApi()
+  };
+
+
+  getDatafromApi = () => {
+
+    console.log("get Data from getDataApi");
+    let that = this;      
+    axios.get('http://localhost:4000/api/getChainData')
+    .then(function (response) {
+      console.log(response.data);
+
+      that.setState({ api : response.data });
+
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+ }
+
+
+ render() {
     return (
         <Container >
+            
             <Row className="border border-dark" style={{padding: "20px"}}>
                 {
-                    api.map((item) => {
+                    this.state.api.map((item) => {
                         return <Col>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src={item.image} />
@@ -26,7 +60,7 @@ function home() {
                                         the card's content.
                                         </Card.Text>
                                     {/*  <Button className="button" variant="primary">Buy for {item.price} </Button> */}
-                                    <Modal data={item} />
+                                    <BuyBookModal data={item} />
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -37,6 +71,7 @@ function home() {
         
     )
 }
+}
 
-
-export default home;
+var homeObject = new Home();
+export {Home, homeObject};

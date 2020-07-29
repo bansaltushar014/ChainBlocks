@@ -1,7 +1,7 @@
 import React from 'react'
 import web3Obj from './helper'
 import homepage from './homepage';
-import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom';
 import './css/appButton.css';
 
 const tokenAbi = require('human-standard-token-abi')
@@ -282,20 +282,13 @@ class App extends React.Component {
   }
 
   render() {
-    let { account} = this.state
+    let { account, buildEnv, selectedVerifier, verifierId, placeholder, balance } = this.state
     return (
       <div className="App">
         {!account && (
           <div>
             <h3>ChainBooks</h3>
           <form onSubmit={this.enableTorus}>
-            {/* <p>Build Environment</p>
-            <select name="buildEnv" value={buildEnv} onChange={e => this.setState({ buildEnv: e.target.value })}>
-              <option value="production">Production</option>
-              <option value="staging">Staging</option>
-              <option value="testing">Testing</option>
-              <option value="development">Development</option>
-            </select> */}
             <button className="button1 button2">Login</button>
           </form>
           </div>
@@ -305,8 +298,7 @@ class App extends React.Component {
             <Router>
             <Redirect to='/homepage' />
             <Switch>
-                        <Route exact path='/homepage' component={homepage} />
-                        
+             <Route exact path='/homepage' component={homepage} />        
             </Switch>
             </Router>
             </div>
