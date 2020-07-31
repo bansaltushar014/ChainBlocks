@@ -14,7 +14,7 @@
 /build
 
 # Ipfs
-./src/ipfs
+ipfs.js
 
 
 
