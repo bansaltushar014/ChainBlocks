@@ -20,6 +20,4 @@ This project solves the problem between Readers and Writers. Writers can sell th
 
 Clone https://github.com/bansaltushar014/ChainBlocks.git <br>
 npm install <br>
-truffle compile <br>
-truffle migrate <br>
 npm start <br>
