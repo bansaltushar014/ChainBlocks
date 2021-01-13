@@ -21,3 +21,7 @@ This project solves the problem between Readers and Writers. Writers can sell th
 Clone https://github.com/bansaltushar014/ChainBlocks.git <br>
 npm install <br>
 npm start <br>
+
+## `More Info` 
+
+[Visit the Wiki](https://github.com/bansaltushar014/ChainBooks/wiki/ChainBooks)
