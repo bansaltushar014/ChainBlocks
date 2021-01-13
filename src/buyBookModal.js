@@ -2,10 +2,11 @@ import Modal from 'react-bootstrap/Modal';
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import './css/buttonFix.css';
-import Payment from './payment';
+import {getAuthorAddress} from './payment';
 import './css/loader.css';
 
 function BuyBook(props) {
+  
   const [show, setShow] = useState(false);
   const [secondShow, setSecondShow] = useState(false);
 
@@ -21,7 +22,7 @@ function BuyBook(props) {
     const price = props.data.price;
     // send the ether to owner 
     handleSecondShow();
-    await Payment.getAuthorAddress(bookId, price)
+    await getAuthorAddress(bookId, price)
       .then(r => {
         handleSecondClose();
       })
@@ -60,10 +61,10 @@ function BuyBook(props) {
         <Modal.Footer>
           <Button className="button" variant="secondary" onClick={handleClose}>
             Cancel
-            </Button>
+          </Button>
           <Button className="button" variant="primary" onClick={handleYes}>
             Yes!
-            </Button>
+          </Button>
         </Modal.Footer>
       </Modal>
 

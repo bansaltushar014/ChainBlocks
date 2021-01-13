@@ -1,0 +1,1026 @@
+{
+  "contractName": "User",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "x",
+          "type": "string"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "get",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"x\",\"type\":\"string\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"name\":\"\",\"type\":\"string[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/tushar/Downloads/projects/Ethereum Practice/6 torus/torus3/contracts/User.sol\":\"User\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/tushar/Downloads/projects/Ethereum Practice/6 torus/torus3/contracts/User.sol\":{\"keccak256\":\"0xa786d70c8378e140bf172a04e402d288d9d5719a5a88ad1f72db7265132c8aba\",\"urls\":[\"bzzr://1cceb1ba2013e40e051e0ed75cf85da7e8d521e44113cf55ad69b4e2c5619868\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610574806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80634ed3885e1461003b5780636d4ce63c14610057575b600080fd5b61005560048036036100509190810190610317565b610075565b005b61005f6100f6565b60405161006c919061041a565b60405180910390f35b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000018190806001815401808255809150509060018203906000526020600020016000909192909190915090805190602001906100f192919061021e565b505050565b60606000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001805480602002602001604051908101604052809291908181526020016000905b82821015610215578382906000526020600020018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102015780601f106101d657610100808354040283529160200191610201565b820191906000526020600020905b8154815290600101906020018083116101e457829003601f168201915b505050505081526020019060010190610159565b50505050905090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061025f57805160ff191683800117855561028d565b8280016001018555821561028d579182015b8281111561028c578251825591602001919060010190610271565b5b50905061029a919061029e565b5090565b6102c091905b808211156102bc5760008160009055506001016102a4565b5090565b90565b600082601f8301126102d457600080fd5b81356102e76102e282610469565b61043c565b9150808252602083016020830185838301111561030357600080fd5b61030e8382846104e7565b50505092915050565b60006020828403121561032957600080fd5b600082013567ffffffffffffffff81111561034357600080fd5b61034f848285016102c3565b91505092915050565b600061036483836103e1565b905092915050565b6000610377826104a2565b61038181856104c5565b93508360208202850161039385610495565b8060005b858110156103cf57848403895281516103b08582610358565b94506103bb836104b8565b925060208a01995050600181019050610397565b50829750879550505050505092915050565b60006103ec826104ad565b6103f681856104d6565b93506104068185602086016104f6565b61040f81610529565b840191505092915050565b60006020820190508181036000830152610434818461036c565b905092915050565b6000604051905081810181811067ffffffffffffffff8211171561045f57600080fd5b8060405250919050565b600067ffffffffffffffff82111561048057600080fd5b601f19601f8301169050602081019050919050565b6000602082019050919050565b600081519050919050565b600081519050919050565b6000602082019050919050565b600082825260208201905092915050565b600082825260208201905092915050565b82818337600083830152505050565b60005b838110156105145780820151818401526020810190506104f9565b83811115610523576000848401525b50505050565b6000601f19601f830116905091905056fea265627a7a72305820008ba04a65945f1d0244df4df43908259e3a38ba24209861fc9361cf744e63626c6578706572696d656e74616cf50037",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80634ed3885e1461003b5780636d4ce63c14610057575b600080fd5b61005560048036036100509190810190610317565b610075565b005b61005f6100f6565b60405161006c919061041a565b60405180910390f35b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000018190806001815401808255809150509060018203906000526020600020016000909192909190915090805190602001906100f192919061021e565b505050565b60606000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001805480602002602001604051908101604052809291908181526020016000905b82821015610215578382906000526020600020018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102015780601f106101d657610100808354040283529160200191610201565b820191906000526020600020905b8154815290600101906020018083116101e457829003601f168201915b505050505081526020019060010190610159565b50505050905090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061025f57805160ff191683800117855561028d565b8280016001018555821561028d579182015b8281111561028c578251825591602001919060010190610271565b5b50905061029a919061029e565b5090565b6102c091905b808211156102bc5760008160009055506001016102a4565b5090565b90565b600082601f8301126102d457600080fd5b81356102e76102e282610469565b61043c565b9150808252602083016020830185838301111561030357600080fd5b61030e8382846104e7565b50505092915050565b60006020828403121561032957600080fd5b600082013567ffffffffffffffff81111561034357600080fd5b61034f848285016102c3565b91505092915050565b600061036483836103e1565b905092915050565b6000610377826104a2565b61038181856104c5565b93508360208202850161039385610495565b8060005b858110156103cf57848403895281516103b08582610358565b94506103bb836104b8565b925060208a01995050600181019050610397565b50829750879550505050505092915050565b60006103ec826104ad565b6103f681856104d6565b93506104068185602086016104f6565b61040f81610529565b840191505092915050565b60006020820190508181036000830152610434818461036c565b905092915050565b6000604051905081810181811067ffffffffffffffff8211171561045f57600080fd5b8060405250919050565b600067ffffffffffffffff82111561048057600080fd5b601f19601f8301169050602081019050919050565b6000602082019050919050565b600081519050919050565b600081519050919050565b6000602082019050919050565b600082825260208201905092915050565b600082825260208201905092915050565b82818337600083830152505050565b60005b838110156105145780820151818401526020810190506104f9565b83811115610523576000848401525b50505050565b6000601f19601f830116905091905056fea265627a7a72305820008ba04a65945f1d0244df4df43908259e3a38ba24209861fc9361cf744e63626c6578706572696d656e74616cf50037",
+  "sourceMap": "61:311:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;61:311:3;;;;;;;",
+  "deployedSourceMap": "61:311:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;61:311:3;;;;;;;;;;;;;;;;;;;;;;;;172:82;;;;;;;;;;;;;;;;:::i;:::-;;264:105;;;:::i;:::-;;;;;;;;;;;;;;;;172:82;216:7;:19;224:10;216:19;;;;;;;;;;;;;;;:24;;246:1;216:32;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;216:32:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;172:82;:::o;264:105::-;300:15;338:7;:19;346:10;338:19;;;;;;;;;;;;;;;:24;;331:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;264:105;:::o;61:311::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;6:442:-1:-;;108:3;101:4;93:6;89:17;85:27;75:2;;126:1;123;116:12;75:2;163:6;150:20;185:65;200:49;242:6;200:49;;;185:65;;;176:74;;270:6;263:5;256:21;306:4;298:6;294:17;339:4;332:5;328:16;374:3;365:6;360:3;356:16;353:25;350:2;;;391:1;388;381:12;350:2;401:41;435:6;430:3;425;401:41;;;68:380;;;;;;;;456:347;;570:2;558:9;549:7;545:23;541:32;538:2;;;586:1;583;576:12;538:2;649:1;638:9;634:17;621:31;672:18;664:6;661:30;658:2;;;704:1;701;694:12;658:2;724:63;779:7;770:6;759:9;755:22;724:63;;;714:73;;600:193;532:271;;;;;811:181;;924:62;982:3;974:6;924:62;;;910:76;;903:89;;;;;1029:896;;1186:60;1240:5;1186:60;;;1259:92;1344:6;1339:3;1259:92;;;1252:99;;1374:3;1416:4;1408:6;1404:17;1399:3;1395:27;1443:62;1499:5;1443:62;;;1525:7;1553:1;1538:348;1563:6;1560:1;1557:13;1538:348;;;1625:9;1619:4;1615:20;1610:3;1603:33;1670:6;1664:13;1692:76;1763:4;1748:13;1692:76;;;1684:84;;1785:66;1844:6;1785:66;;;1775:76;;1874:4;1869:3;1865:14;1858:21;;1595:291;1585:1;1582;1578:9;1573:14;;1538:348;;;1542:14;1899:4;1892:11;;1916:3;1909:10;;1165:760;;;;;;;;;;1933:319;;2031:35;2060:5;2031:35;;;2078:61;2132:6;2127:3;2078:61;;;2071:68;;2144:52;2189:6;2184:3;2177:4;2170:5;2166:16;2144:52;;;2217:29;2239:6;2217:29;;;2212:3;2208:39;2201:46;;2011:241;;;;;;2259:385;;2439:2;2428:9;2424:18;2416:26;;2489:9;2483:4;2479:20;2475:1;2464:9;2460:17;2453:47;2514:120;2629:4;2620:6;2514:120;;;2506:128;;2410:234;;;;;2651:256;;2713:2;2707:9;2697:19;;2751:4;2743:6;2739:17;2850:6;2838:10;2835:22;2814:18;2802:10;2799:34;2796:62;2793:2;;;2871:1;2868;2861:12;2793:2;2891:10;2887:2;2880:22;2691:216;;;;;2914:259;;3058:18;3050:6;3047:30;3044:2;;;3090:1;3087;3080:12;3044:2;3134:4;3130:9;3123:4;3115:6;3111:17;3107:33;3099:41;;3163:4;3157;3153:15;3145:23;;2981:192;;;;3183:129;;3299:4;3291:6;3287:17;3276:28;;3267:45;;;;3322:113;;3424:5;3418:12;3408:22;;3402:33;;;;3442:88;;3519:5;3513:12;3503:22;;3497:33;;;;3539:130;;3657:4;3649:6;3645:17;3634:28;;3626:43;;;;3679:184;;3815:6;3810:3;3803:19;3852:4;3847:3;3843:14;3828:29;;3796:67;;;;;3872:153;;3977:6;3972:3;3965:19;4014:4;4009:3;4005:14;3990:29;;3958:67;;;;;4034:145;4115:6;4110:3;4105;4092:30;4171:1;4162:6;4157:3;4153:16;4146:27;4085:94;;;;4188:268;4253:1;4260:101;4274:6;4271:1;4268:13;4260:101;;;4350:1;4345:3;4341:11;4335:18;4331:1;4326:3;4322:11;4315:39;4296:2;4293:1;4289:10;4284:15;;4260:101;;;4376:6;4373:1;4370:13;4367:2;;;4441:1;4432:6;4427:3;4423:16;4416:27;4367:2;4237:219;;;;;4464:97;;4552:2;4548:7;4543:2;4536:5;4532:14;4528:28;4518:38;;4512:49;;;",
+  "source": "pragma solidity 0.5.8;\r\npragma experimental ABIEncoderV2;\r\n\r\ncontract User {\r\n  \r\n   struct MyUser {\r\n    string[] ipfs;\r\n  }\r\n\r\n  mapping(address => MyUser) myusers;\r\n\r\n  function set(string memory x) public {\r\n    myusers[msg.sender].ipfs.push(x);\r\n  }\r\n  \r\n    function get() public view returns (string[] memory) {\r\n    \r\n     return myusers[msg.sender].ipfs;\r\n   }\r\n}\r\n",
+  "sourcePath": "/home/tushar/Downloads/projects/Ethereum Practice/6 torus/torus3/contracts/User.sol",
+  "ast": {
+    "absolutePath": "/home/tushar/Downloads/projects/Ethereum Practice/6 torus/torus3/contracts/User.sol",
+    "exportedSymbols": {
+      "User": [
+        172
+      ]
+    },
+    "id": 173,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 134,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:3"
+      },
+      {
+        "id": 135,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "24:33:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 172,
+        "linearizedBaseContracts": [
+          172
+        ],
+        "name": "User",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "User.MyUser",
+            "id": 139,
+            "members": [
+              {
+                "constant": false,
+                "id": 138,
+                "name": "ipfs",
+                "nodeType": "VariableDeclaration",
+                "scope": 139,
+                "src": "106:13:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                  "typeString": "string[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 136,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "106:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "id": 137,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "106:8:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                    "typeString": "string[]"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "MyUser",
+            "nodeType": "StructDefinition",
+            "scope": 172,
+            "src": "85:40:3",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 143,
+            "name": "myusers",
+            "nodeType": "VariableDeclaration",
+            "scope": 172,
+            "src": "131:34:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MyUser_$139_storage_$",
+              "typeString": "mapping(address => struct User.MyUser)"
+            },
+            "typeName": {
+              "id": 142,
+              "keyType": {
+                "id": 140,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "139:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "131:26:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MyUser_$139_storage_$",
+                "typeString": "mapping(address => struct User.MyUser)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 141,
+                "name": "MyUser",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 139,
+                "src": "150:6:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_MyUser_$139_storage_ptr",
+                  "typeString": "struct User.MyUser"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 157,
+              "nodeType": "Block",
+              "src": "209:45:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 154,
+                        "name": "x",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 145,
+                        "src": "246:1:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 148,
+                            "name": "myusers",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 143,
+                            "src": "216:7:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MyUser_$139_storage_$",
+                              "typeString": "mapping(address => struct User.MyUser storage ref)"
+                            }
+                          },
+                          "id": 151,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 149,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 187,
+                              "src": "224:3:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 150,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "224:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "216:19:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_MyUser_$139_storage",
+                            "typeString": "struct User.MyUser storage ref"
+                          }
+                        },
+                        "id": 152,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "ipfs",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 138,
+                        "src": "216:24:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                          "typeString": "string storage ref[] storage ref"
+                        }
+                      },
+                      "id": 153,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "216:29:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_string_storage_$returns$_t_uint256_$",
+                        "typeString": "function (string storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 155,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "216:32:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 156,
+                  "nodeType": "ExpressionStatement",
+                  "src": "216:32:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 158,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "set",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 146,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 145,
+                  "name": "x",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 158,
+                  "src": "185:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 144,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "185:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "184:17:3"
+            },
+            "returnParameters": {
+              "id": 147,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "209:0:3"
+            },
+            "scope": 172,
+            "src": "172:82:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 170,
+              "nodeType": "Block",
+              "src": "317:52:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 164,
+                        "name": "myusers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 143,
+                        "src": "338:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MyUser_$139_storage_$",
+                          "typeString": "mapping(address => struct User.MyUser storage ref)"
+                        }
+                      },
+                      "id": 167,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 165,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 187,
+                          "src": "346:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 166,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "346:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "338:19:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_MyUser_$139_storage",
+                        "typeString": "struct User.MyUser storage ref"
+                      }
+                    },
+                    "id": 168,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "ipfs",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 138,
+                    "src": "338:24:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                      "typeString": "string storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 163,
+                  "id": 169,
+                  "nodeType": "Return",
+                  "src": "331:31:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 171,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 159,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "276:2:3"
+            },
+            "returnParameters": {
+              "id": 163,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 162,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 171,
+                  "src": "300:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 160,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "300:6:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 161,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "300:8:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "299:17:3"
+            },
+            "scope": 172,
+            "src": "264:105:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 173,
+        "src": "61:311:3"
+      }
+    ],
+    "src": "0:374:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/tushar/Downloads/projects/Ethereum Practice/6 torus/torus3/contracts/User.sol",
+    "exportedSymbols": {
+      "User": [
+        172
+      ]
+    },
+    "id": 173,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 134,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:3"
+      },
+      {
+        "id": 135,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "24:33:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 172,
+        "linearizedBaseContracts": [
+          172
+        ],
+        "name": "User",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "User.MyUser",
+            "id": 139,
+            "members": [
+              {
+                "constant": false,
+                "id": 138,
+                "name": "ipfs",
+                "nodeType": "VariableDeclaration",
+                "scope": 139,
+                "src": "106:13:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                  "typeString": "string[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 136,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "106:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "id": 137,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "106:8:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                    "typeString": "string[]"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "MyUser",
+            "nodeType": "StructDefinition",
+            "scope": 172,
+            "src": "85:40:3",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 143,
+            "name": "myusers",
+            "nodeType": "VariableDeclaration",
+            "scope": 172,
+            "src": "131:34:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MyUser_$139_storage_$",
+              "typeString": "mapping(address => struct User.MyUser)"
+            },
+            "typeName": {
+              "id": 142,
+              "keyType": {
+                "id": 140,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "139:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "131:26:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MyUser_$139_storage_$",
+                "typeString": "mapping(address => struct User.MyUser)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 141,
+                "name": "MyUser",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 139,
+                "src": "150:6:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_MyUser_$139_storage_ptr",
+                  "typeString": "struct User.MyUser"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 157,
+              "nodeType": "Block",
+              "src": "209:45:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 154,
+                        "name": "x",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 145,
+                        "src": "246:1:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 148,
+                            "name": "myusers",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 143,
+                            "src": "216:7:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MyUser_$139_storage_$",
+                              "typeString": "mapping(address => struct User.MyUser storage ref)"
+                            }
+                          },
+                          "id": 151,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 149,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 187,
+                              "src": "224:3:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 150,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "224:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "216:19:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_MyUser_$139_storage",
+                            "typeString": "struct User.MyUser storage ref"
+                          }
+                        },
+                        "id": 152,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "ipfs",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 138,
+                        "src": "216:24:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                          "typeString": "string storage ref[] storage ref"
+                        }
+                      },
+                      "id": 153,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "216:29:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_string_storage_$returns$_t_uint256_$",
+                        "typeString": "function (string storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 155,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "216:32:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 156,
+                  "nodeType": "ExpressionStatement",
+                  "src": "216:32:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 158,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "set",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 146,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 145,
+                  "name": "x",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 158,
+                  "src": "185:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 144,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "185:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "184:17:3"
+            },
+            "returnParameters": {
+              "id": 147,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "209:0:3"
+            },
+            "scope": 172,
+            "src": "172:82:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 170,
+              "nodeType": "Block",
+              "src": "317:52:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 164,
+                        "name": "myusers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 143,
+                        "src": "338:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MyUser_$139_storage_$",
+                          "typeString": "mapping(address => struct User.MyUser storage ref)"
+                        }
+                      },
+                      "id": 167,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 165,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 187,
+                          "src": "346:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 166,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "346:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "338:19:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_MyUser_$139_storage",
+                        "typeString": "struct User.MyUser storage ref"
+                      }
+                    },
+                    "id": 168,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "ipfs",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 138,
+                    "src": "338:24:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                      "typeString": "string storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 163,
+                  "id": 169,
+                  "nodeType": "Return",
+                  "src": "331:31:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 171,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 159,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "276:2:3"
+            },
+            "returnParameters": {
+              "id": 163,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 162,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 171,
+                  "src": "300:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 160,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "300:6:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 161,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "300:8:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "299:17:3"
+            },
+            "scope": 172,
+            "src": "264:105:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 173,
+        "src": "61:311:3"
+      }
+    ],
+    "src": "0:374:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x7068BC7447B34b672118C221f10A4AE1A79f25Ed",
+      "transactionHash": "0x133809131b71669530c9977a18aba2c6b34f58a2ca1aa44549064ea09e2adcac"
+    },
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0x0e089d5468c6b052b46ad2b903929de9767e369b",
+      "transactionHash": "0x30e497d33342b9d75b13bd93f85bfcdc982e81b28275abc78042ef3b8a1df2f4"
+    }
+  },
+  "schemaVersion": "3.0.16",
+  "updatedAt": "2020-05-28T00:16:30.569Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

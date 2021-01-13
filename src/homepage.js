@@ -4,89 +4,94 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import './css/buttonFix.css';
 import InfoModal from './infoModal';
-import web3Obj from './helper'
-import {Home, homeObject} from './home';
-import {logout1} from './App';
+import web3Obj from './helper';
+import Home from './home';
 import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 import library from './library';
 import AddBookModal from './addBookModal';
+import './css/buttonFix.css';
 
 class Homepage extends React.Component {
     
-
     constructor(props) {
         super(props)
-        this.getUserInfo = this.getUserInfo.bind(this);
-                      
+                             
         this.state = {
-            chainBookDataAzure: [],
+            userInfo : {},
           };
     }
 
+    componentDidMount = () => {
+        this.getUserInfo();
+    };
 
     getUserInfo = async () => {
-        this.data = {};
+        let fetchUserInfo = {};
         console.log("Inside getInfo!");
-        await web3Obj.torus.getUserInfo()
-            .then(async (r) => {
-                console.log("Inside Success of getInfo!");
-                this.data.name = r.name;
-                this.data.email = r.email;
-                this.data.verifier = r.verifier;
-                await web3Obj.web3.eth.getAccounts().then(async (accounts) => {
-                    this.data.address = accounts[0];
-                })
-                console.log(this.data);
-            })
+        const userInfo = await web3Obj.torus.getUserInfo();
+        const accountsInfo = await web3Obj.web3.eth.getAccounts();
+        fetchUserInfo.name = userInfo.name;
+        fetchUserInfo.email = userInfo.email;
+        fetchUserInfo.verifier = userInfo.verifier;
+        fetchUserInfo.address = accountsInfo[0];
+        this.setState({userInfo:fetchUserInfo});
     }
 
     logout = () => {
-        // web3Obj.torus.cleanUp().then(() => {
-        //     this.setState({ account: '', balance: 0 })
-        //     sessionStorage.setItem('pageUsingTorus', false)
-        // })
-        logout1.logout();
-        window.location.reload('http://localhost:3000/'); 
+        this.props.logout();
+        window.location.reload('/'); 
     }
 
     render() {
-        this.getUserInfo();
+        
         return (
-            <div>
-                { this.state && this.state.chainBookDataAzure &&
- 
-                <Router>
+            <>              
+                 <Router>
                     <Container style={{padding: "0px 20px"}}>
-
                         <Row className="border border-dark">
-                            {/* <Col><Button onClick={this.getUserInfo} variant="info" className="button align-top">Info</Button>{' '}</Col> */}
-                            <Col><InfoModal data={this.data} /></Col>
+                            
                             <Col>
-                            {/* <Form inline>
-                                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                                <Button className="button" variant="outline-success">Search</Button>
-                            </Form> */}
-                            {/* <Button onClick={''} className="button" variant="info">Add Book</Button> */}
-                            <AddBookModal />
+                                <InfoModal data={this.state.userInfo} />
                             </Col>
-                            <Redirect to='/' />
-                            <Link to='/'><Col><Button onClick={Home} className="button" variant="success">Home</Button>{''}</Col></Link>
-                            <Link to='/library'><Col><Button onClick={this.library} className="button" variant="success">Library</Button>{''}</Col></Link>
-                            <Col><Button onClick={this.logout} className="button" variant="info">Logout</Button>{' '}</Col>
+                            
+                            <Col>
+                                <AddBookModal />
+                            </Col>
+                                                                                    
+                            <Col>
+                                <Link to='/'>
+                                    <Button onClick={Home} className="button" variant="success">
+                                        Home
+                                    </Button>
+                                </Link>
+                            </Col>
+                                                        
+                            <Col>
+                                <Link to='/library'>
+                                    <Button onClick={this.library} className="button" variant="success">
+                                        Library
+                                    </Button>
+                                </Link>
+                            </Col>
+                            
+                            <Col>
+                                <Button onClick={this.logout} className="button" variant="info">
+                                    Logout
+                                </Button>
+                            </Col>
                         </Row>
+                    
+                        <Redirect to='/' />
 
                     </Container>
-                    {/* <button onClick={this.UserList}>fetch</button> */}
-
+                    
                     <Switch>
                         <Route exact path='/' component={Home} />
                         <Route path='/library' component={library} />
                     </Switch>
                 </Router>
-                }
-            </div>
+            </>
         );
     }
 }

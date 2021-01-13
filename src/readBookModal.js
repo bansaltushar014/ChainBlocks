@@ -1,9 +1,7 @@
-import Modal from 'react-bootstrap/Modal';
 import React, {useState} from 'react';
+import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import './css/buttonFix.css';
-
-
 
 function ReadBook(props) {
     const [show, setShow] = useState(false);
@@ -18,9 +16,7 @@ function ReadBook(props) {
     } 
 
     const handleShow = () => setShow(true);
-
-
-  
+ 
     return (
       <>
         <Button className="button" variant="primary" onClick={handleShow}>

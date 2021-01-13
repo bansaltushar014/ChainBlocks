@@ -3,14 +3,12 @@ import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import './css/buttonFix.css';
 
-
-function Example(props) {
+function InfoModal(props) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => {
         setShow(false);
     }
-
     
     const handleYes = () => {
         setShow(false);
@@ -20,33 +18,32 @@ function Example(props) {
         setShow(true)
     };
 
-
-  
     return (
       <>
         <Button className="button" variant="info"  onClick={handleShow}>
-        Info
+          Info
         </Button>
-        {/* {props.data.name} */}
+        {props.data.name &&
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title> {props.data.name} </Modal.Title>
           </Modal.Header>
-            <Modal.Body> 
+          <Modal.Body> 
 
                 Email : {props.data.email}  <br/>
                 Varifier : {props.data.verifier} <br/>
                 Address : {props.data.address} <br/>
 
-            </Modal.Body>
+          </Modal.Body>
           <Modal.Footer>
             <Button className="button"  variant="primary" onClick={handleYes}>
               OK!
             </Button>
           </Modal.Footer>
         </Modal>
+        }
         </>
     );
   }
   
-  export default Example;
+  export default InfoModal;

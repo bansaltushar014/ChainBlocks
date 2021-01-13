@@ -9,47 +9,41 @@ import BuyBookModal from './buyBookModal';
 
 class Home extends React.Component {
 
-
-
     constructor(props) {
         super(props)
         this.getDatafromApi = this.getDatafromApi.bind(this);
         this.state = {
-            api: [],
+            books: [],
           };
     }
 
 
   componentDidMount = () => {
+    console.log("Invoking Home!");
     this.getDatafromApi()
   };
 
 
-  getDatafromApi = () => {
-
+  getDatafromApi = async () => {
+    try {
+    
     console.log("get Data from getDataApi");
-    let that = this;      
-    axios.get('http://localhost:4000/api/getChainData')
-    .then(function (response) {
-      console.log(response.data);
-
-      that.setState({ api : response.data });
-
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    let response = await axios.get('http://localhost:4000/api/getChainData');
+    this.setState({ books : response.data });
+    
+    } catch(err) {
+      console.log(err);
+    };
  }
 
 
  render() {
     return (
         <Container >
-            
             <Row className="border border-dark" style={{padding: "20px"}}>
                 {
-                    this.state.api.map((item) => {
-                        return <Col>
+                    this.state.books.map((item, index) => {
+                        return <Col key={index}>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src={item.image} />
                                 <Card.Body>
@@ -73,5 +67,4 @@ class Home extends React.Component {
 }
 }
 
-var homeObject = new Home();
-export {Home, homeObject};
+export default Home;

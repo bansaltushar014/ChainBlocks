@@ -44,9 +44,12 @@ class pdf extends Component {
       <div>
 
         <div style={{
-          width: '100%', alignItems: 'center',
-          justifyContent: 'center', textAlign: 'center'
+          width: '100%', 
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center'
         }}>
+
           <nav>
             {pageNumber === 1 ?
               <button className="button1 button2" disabled={false}>Prev</button> :
@@ -55,19 +58,24 @@ class pdf extends Component {
               <button disabled={false} className="button1 button2">Next</button> :
               <button onClick={this.goToNextPage} className="button1 button2">Next</button>}
           </nav>
+
           <p> Page {pageNumber} of {numPages} </p>
+
         </div>
 
         <div style={{
-          display: 'flex', width: '100h', alignItems: 'center',
-          justifyContent: 'center', textAlign: 'center'
+          display: 'flex',
+          width: '100h',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center'
         }}>
 
           <Document file={urlhash} onLoadSuccess={this.onDocumentLoadSuccess}>
             <Page pageNumber={pageNumber} style={600} />
           </Document>
+          
         </div>
-
       </div>
     );
   }

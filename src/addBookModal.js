@@ -1,19 +1,21 @@
 import Modal from 'react-bootstrap/Modal';
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
-import './css/buttonFix.css';
 import ipfsHelper from './ipfsHelper'
-// import Chainbooks from './contracts/Chainbooks.json';
 import web3Obj from './helper'
 import axios from "axios";
-import { Home, homeObject } from "./home";
+import {chainBooksInitialization} from './instance.js';
+import './css/buttonFix.css';
 import './css/loader.css';
 
-function Example() {
+function AddBookModal() {
     const [show, setShow] = useState(false);
     const [secondShow, setSecondShow] = useState(false);
     const [bookName, setBookName] = useState('')
     const [authorName, setAuthorName] = useState('')
+    const [buffer, setBuffer] = useState([]);
+    const [chainBookInstance, setChainBookInstance] = useState();
+    const [authorAddress, setAuthorAddress] = useState('');
     
     const handleClose = () => {
         setShow(false);
@@ -51,26 +53,17 @@ function Example() {
         setBookName(book);
     }
 
-
-
-    const [buffer, setBuffer] = useState([]);
-    const [chainBookInstance, setChainBookInstance] = useState();
-    const [generatedHash, setGeneratedHash] = useState(null);
-
-
-    const initialize = () => {
-        var that = this;
-        axios.get('http://localhost:4000/static/Chainbooks.json')
-            .then(function (response) {
-                console.log(response.data);
-                const chainBooksAbi = response.data.abi;
-                const chainBooksContractAddress = response.data.networks[3].address;
-                setChainBookInstance(new web3Obj.web3.eth.Contract(chainBooksAbi, chainBooksContractAddress))
-
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+    const captureAuthorAddress = (event) => {
+        const address = event.target.value;
+        setAuthorAddress(address);
+    }
+    
+    const initialize = async () => {
+        chainBooksInitialization()
+        .then(result => {
+            console.log(result);
+            setChainBookInstance(result);
+        })
     }
 
     const captureFile = (event) => {
@@ -81,33 +74,32 @@ function Example() {
         reader.onloadend = () => {
             setBuffer(Buffer(reader.result))
         }
-
     }
 
     const onSubmit = async (event) => {
         handleClose();
-        event.preventDefault()
-        console.log(bookName);
-        console.log(authorName);
+        event.preventDefault();
+        
+        console.log(bookName +' '+ authorName);
+        
         await ipfsHelper.files.add(buffer, async (error, result) => {
             if (error) {
                 console.error(error)
                 return
             }
 
-            setGeneratedHash(result[0].hash);
-            const hash = result[0].hash;
             console.log("hash is " + result[0].hash);
             console.log(buffer);
             console.log(chainBookInstance);
-            await web3Obj.web3.eth.getAccounts().then(async (accounts) => {
-                await chainBookInstance.methods.getBookId().call({ from: accounts[0] })
-                    .then((result) => {
-                        console.log("Book Number has been received!" + result[0]);
-                        showLoading(hash, result[0]);
-                    })
-            })
+
+            receiveBookId(result[0].hash);         
         })
+    }
+
+    const receiveBookId = async (hash) => {
+        const getAccounts = await web3Obj.web3.eth.getAccounts();
+        const BookId = await chainBookInstance.methods.getBookId().call({ from: getAccounts[0] })
+        showLoading(hash, BookId[0]);       
     }
 
     const showLoading = (hash, bookId) => {
@@ -115,21 +107,14 @@ function Example() {
         handleSecondShow();
         console.log("Inside Showloading where hash is " + hash + " book id is " + bookId);
         savetoChainBook(hash, bookId);
-
     }
 
     const savetoChainBook = async (hash, bookId) => {
-        // here azure will save this info and in chainbook we will send ipfs and address
-        const authorAddress = randomAddress(bookId);
-        console.log("author Address is " + authorAddress);
-
-        await web3Obj.web3.eth.getAccounts().then(async (accounts) => {
-            await chainBookInstance.methods.addBook(hash, authorAddress).send({ from: accounts[0] })
-                .then((result) => {
-                    console.log("Book Hash has been saved on ChainBooks!");
-                    savetoAzure(bookId);
-                })
-        })
+        
+        const getAccounts = await web3Obj.web3.eth.getAccounts();
+        await chainBookInstance.methods.addBook(hash, authorAddress).send({ from: getAccounts[0] });
+        savetoAzure(bookId);
+       
     }
 
     const savetoAzure = (bookId) => {
@@ -148,19 +133,11 @@ function Example() {
             .catch(function (error) {
                 console.log(error);
             });
-
     }
 
     function refreshPage() {
         window.location.reload('http://localhost:3000/');
     }
-
-    const randomAddress = (bookId) => {
-        var account = web3Obj.web3.eth.accounts.create();
-        return account.address;
-    }
-
-
 
     return (
         <>
@@ -184,6 +161,8 @@ function Example() {
                                         <input type='text' name="bookName" onChange={captureBookName} placeholder='Book Name' /> <br />  <br />
                                         <label>Author Name</label> <br />
                                         <input type="text" name="authorName" onChange={captureAuthorName} placeholder='Author Name' /> <br /> <br />
+                                        <label>Address</label>  <br />
+                                        <input type="text" name="authorAddress" onChange={captureAuthorAddress} placeholder='Author Address' /> <br /> <br />
                                         <input type='submit' />
                                     </form>
                                 </div>
@@ -213,6 +192,6 @@ function Example() {
     );
 }
 
-export default Example;
+export default AddBookModal;
 
 

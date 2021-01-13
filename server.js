@@ -44,6 +44,7 @@ app.post('/api/postChainData', (req,res,next)=> {
   chainData.price = req.body.price;
   chainData.By = req.body.By;
   chainData.image = req.body.image;
+  
   console.log("Inside postData!");
   console.log(chainData); 
   chainData.save(function(err, res) {
